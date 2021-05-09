@@ -9,7 +9,8 @@
     "release": "release-it"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "utils.js"
   ],
   "repository": {
     "type": "git",

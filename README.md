@@ -12,21 +12,17 @@ yarn add goodreads-parser
 First, import library
 
 ```js
-const goodreadsParser = require('goodreads-parser)
-```
+const GoodReadsParser = require('goodreads-parser')
 
-Usage example
-
-```jsx
 try {
-  const data = await goodreadsParser({ isbn13: "9781788543002" });
+  const data = await GoodReadsParser.parseByISBN13("9781788543002")
   console.log("Book Data::", data);
 } catch (error) {
   console.log("error", error);
 }
 ```
 
-Example response:
+Response:
 
 ```json
 {
@@ -41,4 +37,16 @@ Example response:
   "reviewsCount": 17086,
   "language": undefined
 }
+```
+
+### API
+
+#### By ISBN13
+```js
+const result = await GoodReadsParser.parseByISBN13("123444")
+```
+
+#### By URL
+```js
+const result = await GoodReadsParser.parseByURL("https://www.goodreads.com/book/show/36262331-the-three-body-problem")
 ```
