@@ -1,6 +1,6 @@
 {
   "name": "goodreads-parser",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "main": "index.js",
   "license": "MIT",
   "author": "Shalva Gegia <shalva.gegia@gmail.com>",

@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/shakogegia/goodreads-parser/compare/1.0.3...1.1.0) (2021-05-09)
+
+
+### Features
+
+* genres support ([c6ebf54](https://github.com/shakogegia/goodreads-parser/commit/c6ebf5470c1cacfba086d70943cd0563a1246a67))
+
 ## [1.0.3](https://github.com/shakogegia/goodreads-parser/compare/1.0.2...1.0.3) (2021-05-09)
 
 
