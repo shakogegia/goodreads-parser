@@ -21,6 +21,28 @@ const parseBookDataBoxValue = ({ document, query, parser }) => {
   return;
 };
 
+const parseGenres = ({ document }) => {
+  const nodes = document.querySelectorAll('.brownBackground')
+  const genresH2 = [...nodes].find((node) => node.textContent.toLowerCase().includes('genres'));
+  
+  if(!genresH2) return 
+  
+  const genresBox = genresH2.parentElement.parentElement
+  
+  if(!genresBox) return 
+
+  const genreDivs = genresBox.querySelectorAll('.elementList .left')
+
+  if(!genreDivs) return
+  
+  const genres = [...genreDivs].map(node => {
+    return [...node.querySelectorAll('.bookPageGenreLink')]
+      .map(a => a.textContent.trim())
+      .join(' > ')
+  })
+  return genres
+}
+
 const parseBookPage = (document) => {
   const title = parseElementValue({
     document,
@@ -91,6 +113,8 @@ const parseBookPage = (document) => {
     content: "textContent",
   });
 
+  const genres = parseGenres({ document })
+
   const result = {
     title,
     originalTitle,
@@ -103,6 +127,7 @@ const parseBookPage = (document) => {
     ratingCount,
     reviewsCount,
     language,
+    genres
   };
 
   return result;
