@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "author": "Shalva Gegia <shalva.gegia@gmail.com>",
   "scripts": {
     "example": "nodemon ./example.js",
     "release": "release-it"
@@ -10,6 +11,17 @@
   "files": [
     "index.js"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shakogegia/goodreads-parser.git"
+  },
+  "keywords": [
+    "goodreads parser"
+  ],
+  "bugs": {
+    "url": "https://github.com/shakogegia/goodreads-parser/issues"
+  },
+  "homepage": "https://github.com/shakogegia/goodreads-parser#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "jsdom": "^16.5.3"
