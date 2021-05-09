@@ -57,6 +57,8 @@ Response:
 
 ### API
 
+You can fetch book data by providing ISBN13 or just the url of the book in format like this: `https://www.goodreads.com/book/show/{ID}`
+
 #### By ISBN13
 
 ```js
