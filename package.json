@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^3.3.0",
-    "nodemon": "^2.0.12",
+    "nodemon": "^2.0.16",
     "release-it": "^14.10.0"
   }
 }
