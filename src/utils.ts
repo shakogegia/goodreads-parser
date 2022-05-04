@@ -181,6 +181,8 @@ export function parseSearchResult(document: Document){
       rating: parseFloat(meta.split('avg')[0].trim()),
       ratingCount: parseInt(meta.split('avg rating — ')[1].trim()),
       cover: parseElementValue({ element: tr, query: 'td:first-of-type img', attr: 'src' }),
+      url: parseElementValue({ element: tr, query: '.bookTitle', attr: 'href' }),
+      id: parseElementValue({ element: tr, query: '.bookTitle', attr: 'href' }).toString().split('&')[0].replace('/book/show/', '')
     })
   })
 
