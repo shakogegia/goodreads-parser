@@ -30,7 +30,7 @@ export async function search(term: string){
   try {
     const response = await axios.get("https://www.goodreads.com/search?q="+term);
     const result = parseSearchResult(new JSDOM(response.data).window.document);
-    return { ...result, ...getIdAndUrl(response) }
+    return { ...result }
   } catch (error) {
     throw error;
   }

@@ -177,12 +177,12 @@ export function parseSearchResult(document: Document){
     // 4.58 avg rating — 3,432,135 ratings
     return ({
       title: parseElementValue({ element: tr, query: 'td:first-of-type a', attr: 'title' }),
-      author: parseElementValue({ element: tr, query: 'td:nth-child(2) [itemprop^="name"]', content: 'textContent' }),
+      author: parseElementValue({ element: tr, query: '.authorName__container', content: 'textContent' }),
       rating: parseFloat(meta.split('avg')[0].trim()),
       ratingCount: parseInt(meta.split('avg rating — ')[1].trim()),
       cover: parseElementValue({ element: tr, query: 'td:first-of-type img', attr: 'src' }),
     })
   })
 
-  return { result }
+  return result
 }
