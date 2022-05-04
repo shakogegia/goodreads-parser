@@ -1,3 +1,10 @@
+## [1.1.7](https://github.com/shakogegia/goodreads-parser/compare/1.1.6...1.1.7) (2022-05-04)
+
+
+### Bug Fixes
+
+* goodreads id ([097eb2d](https://github.com/shakogegia/goodreads-parser/commit/097eb2d85a7fff8633afc20e4a23dbdde32cc654))
+
 ## [1.1.6](https://github.com/shakogegia/goodreads-parser/compare/1.1.5...1.1.6) (2022-05-04)
 
 
