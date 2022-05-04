@@ -1,3 +1,5 @@
+## [1.1.4](https://github.com/shakogegia/goodreads-parser/compare/1.1.3...1.1.4) (2022-05-04)
+
 ## [1.1.3](https://github.com/shakogegia/goodreads-parser/compare/1.1.2...1.1.3) (2022-05-04)
 
 ## [1.1.2](https://github.com/shakogegia/goodreads-parser/compare/1.1.1...1.1.2) (2021-06-15)
