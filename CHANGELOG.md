@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/shakogegia/goodreads-parser/compare/1.1.4...1.1.5) (2022-05-04)
+
+
+### Bug Fixes
+
+* typo in parse by url ([9049412](https://github.com/shakogegia/goodreads-parser/commit/90494128bb0a58c996c0730417d7bbbc3b7fd8ba))
+
 ## [1.1.4](https://github.com/shakogegia/goodreads-parser/compare/1.1.3...1.1.4) (2022-05-04)
 
 ## [1.1.3](https://github.com/shakogegia/goodreads-parser/compare/1.1.2...1.1.3) (2022-05-04)
