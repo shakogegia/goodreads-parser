@@ -9,6 +9,8 @@
     "build": "tsc --project tsconfig.json",
     "watch": "tsc-watch --project tsconfig.json",
     "example": "nodemon ./example/sample.js",
+    "prepare": "yarn build",
+    "prepublish": "yarn build",
     "release": "release-it"
   },
   "files": [
