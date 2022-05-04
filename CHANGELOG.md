@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/shakogegia/goodreads-parser/compare/1.1.5...1.1.6) (2022-05-04)
+
+
+### Bug Fixes
+
+* parse author in search results ([f0631d7](https://github.com/shakogegia/goodreads-parser/commit/f0631d769a57d17bdaf06e8ef7503777a505ce40))
+
 ## [1.1.5](https://github.com/shakogegia/goodreads-parser/compare/1.1.4...1.1.5) (2022-05-04)
 
 
