@@ -18,7 +18,7 @@ export async function parseByISBN13(isbn13: string){
   }
 };
 
-export async function parseByURl(url: string){
+export async function parseByURL(url: string){
   try {
     return await parseBook(url)
   } catch (error) {
