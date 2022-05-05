@@ -1,3 +1,10 @@
+## [1.1.10](https://github.com/shakogegia/goodreads-parser/compare/1.1.9...1.1.10) (2022-05-05)
+
+
+### Bug Fixes
+
+* sample search term ([0957510](https://github.com/shakogegia/goodreads-parser/commit/0957510c30337a693d3d2c9dc996ab2312798a61))
+
 ## [1.1.9](https://github.com/shakogegia/goodreads-parser/compare/1.1.8...1.1.9) (2022-05-05)
 
 
