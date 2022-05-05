@@ -1,3 +1,10 @@
+## [1.1.9](https://github.com/shakogegia/goodreads-parser/compare/1.1.8...1.1.9) (2022-05-05)
+
+
+### Bug Fixes
+
+* encode url component ([dba71f6](https://github.com/shakogegia/goodreads-parser/commit/dba71f64b8b461027e8ee8c19e4d611be2d51ca5))
+
 ## [1.1.8](https://github.com/shakogegia/goodreads-parser/compare/1.1.7...1.1.8) (2022-05-04)
 
 
