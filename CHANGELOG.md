@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/shakogegia/goodreads-parser/compare/1.2.3...1.2.4) (2022-05-17)
+
+
+### Bug Fixes
+
+* safe pages ([253a8a6](https://github.com/shakogegia/goodreads-parser/commit/253a8a6920ab4ad6c55fae261f68823be2f7e9cf))
+
 ## [1.2.3](https://github.com/shakogegia/goodreads-parser/compare/1.2.2...1.2.3) (2022-05-17)
 
 
