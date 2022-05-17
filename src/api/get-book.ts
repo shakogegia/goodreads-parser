@@ -46,7 +46,7 @@ export default async function getBook(params: Params): Promise<Book> {
   function dataBoxValue(query: string) {
     const nodes = el.queryAll('.infoBoxRowTitle')
     const tr = Array.from(nodes).find((node) =>
-      node.textContent.toLowerCase().includes(query)
+      node?.textContent?.toLowerCase().includes(query)
     )
 
     if (tr && tr.parentNode) {
@@ -59,7 +59,7 @@ export default async function getBook(params: Params): Promise<Book> {
   function genres() {
     const nodes = el.queryAll('.brownBackground')
     const genresBox = Array.from(nodes).find((node) =>
-      node.textContent.toLowerCase().includes('genres')
+      node?.textContent?.toLowerCase().includes('genres')
     )?.parentElement?.parentElement
 
     if (!genresBox) return
@@ -68,7 +68,7 @@ export default async function getBook(params: Params): Promise<Book> {
       genresBox.querySelectorAll('.elementList .left')
     ).map((node) => {
       return Array.from(node.querySelectorAll('.bookPageGenreLink')).map((a) =>
-        a.textContent.trim().escape()
+        a?.textContent?.trim().escape()
       )
     })
     return genres
@@ -93,7 +93,7 @@ export default async function getBook(params: Params): Promise<Book> {
     language: el.query('[itemprop="inLanguage"]')?.text(),
     genres: genres(),
     altCovers: Array.from(el.queryAll('.otherEdition img')).map((img) =>
-      cover(element(img).attr('src'))
+      cover(element(img)?.attr('src'))
     ),
   }
 
