@@ -19,7 +19,8 @@ type SearchBookItem = {
   url: string
   title: string
   author: string | null
-  cover: string | null
+  coverSmall: string | null
+  coverLarge: string | null
   rating: number | null
   ratingCount: number | null
   publicationYear: number | null
@@ -51,21 +52,20 @@ export default async function searchBooks({
 
     return {
       title: el.query('td:first-of-type a')?.attr('title'),
-      author: el.query('.authorName__container').text(),
-      rating: ratingStr[0].toFloat(),
+      author: el.query('.authorName')?.text(),
+      rating: ratingStr[0]?.toFloat(),
       ratingCount: ratingStr[1]?.toInt(),
-      cover: cover(el.query('td:first-of-type img').attr('src')),
+      coverLarge: cover(el.query('td:first-of-type img')?.attr('src')),
+      coverSmall: el.query('td:first-of-type img')?.attr('src'),
       publicationYear: el
         .query('.greyText.smallText.uitext')
-        .textContent()
-        .between('published', '—')
+        ?.textContent()
+        ?.between('published', '—')
         ?.toInt(),
-      url: 'https://goodreads.com/' + el.query('.bookTitle').attr('href'),
-      id: el
-        .query('.bookTitle')
-        .attr('href')
-        .split('&')[0]
-        .replace('/book/show/', ''),
+      url:
+        'https://goodreads.com' +
+        el.query('.bookTitle')?.attr('href')?.split('?')[0],
+      id: el.query('.u-anchorTarget')?.attr('id'),
     }
   })
 

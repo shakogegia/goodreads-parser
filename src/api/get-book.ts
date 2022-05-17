@@ -16,7 +16,8 @@ type Book = {
   originalUrl: string | null
   author: string | null
   description: string | null
-  cover: string | null
+  coverSmall: string | null
+  coverLarge: string | null
   isbn: string | null
   isbn13: string | null
   pages: number | null
@@ -81,7 +82,8 @@ export default async function getBook(params: Params): Promise<Book> {
     originalUrl: dataBoxValue('url'),
     author: el.query('.authorName')?.text(),
     description: el.query('#description>span:nth-of-type(2)')?.text(),
-    cover: cover(el.query('#coverImage')?.attr('src')),
+    coverSmall: el.query('#coverImage')?.attr('src'),
+    coverLarge: cover(el.query('#coverImage')?.attr('src')),
     isbn: dataBoxValue('isbn')?.split('(')[0]?.escape(),
     isbn13: el.query('[itemprop="isbn"]')?.text(),
     pages: el.query('[itemprop="numberOfPages"]')?.text().toInt(),
