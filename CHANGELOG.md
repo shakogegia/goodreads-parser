@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/shakogegia/goodreads-parser/compare/1.2.2...1.2.3) (2022-05-17)
+
+
+### Bug Fixes
+
+* safe parse int values ([c87f84a](https://github.com/shakogegia/goodreads-parser/commit/c87f84a83fb1ce82268df6841ecaf20a4694112c))
+
 ## [1.2.2](https://github.com/shakogegia/goodreads-parser/compare/1.2.1...1.2.2) (2022-05-17)
 
 
