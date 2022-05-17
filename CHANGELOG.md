@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/shakogegia/goodreads-parser/compare/1.2.0...1.2.1) (2022-05-17)
+
+
+### Bug Fixes
+
+* parse element attr ([56d182d](https://github.com/shakogegia/goodreads-parser/commit/56d182d065eb9b09562310376dcd0b3063a073b8))
+
 # [1.2.0](https://github.com/shakogegia/goodreads-parser/compare/1.1.10...1.2.0) (2022-05-17)
 
 
