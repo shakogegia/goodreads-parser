@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/shakogegia/goodreads-parser/compare/1.2.1...1.2.2) (2022-05-17)
+
+
+### Bug Fixes
+
+* rating to int ([0255375](https://github.com/shakogegia/goodreads-parser/commit/025537509eb23b5ddb8641623e748aaff341b267))
+
 ## [1.2.1](https://github.com/shakogegia/goodreads-parser/compare/1.2.0...1.2.1) (2022-05-17)
 
 
