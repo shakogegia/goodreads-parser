@@ -1,0 +1,5 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": ["source.fixAll.format", "source.fixAll.eslint"],
+  "cSpell.words": ["Goodreads"]
+}

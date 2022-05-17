@@ -1,12 +1,10 @@
-const GoodReadsParser = require("../build/")
-
+const GoodReadsParser = require('../build/')
 
 ;(async () => {
   try {
-    const data = await GoodReadsParser.search("dark matter")
-    console.log("Book Data::", data);
-
+    const result = await GoodReadsParser.searchBooks({ q: 'Dark', page: 2 })
+    console.log('result:', result)
   } catch (error) {
-    console.log("error", error);
+    console.log('error', error)
   }
-})();
+})()
