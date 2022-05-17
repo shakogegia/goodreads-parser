@@ -18,11 +18,11 @@ type SearchBookItem = {
   id: string
   url: string
   title: string
-  author: string
-  cover: string
-  rating: number
-  ratingCount: number
-  publicationYear: number
+  author: string | null
+  cover: string | null
+  rating: number | null
+  ratingCount: number | null
+  publicationYear: number | null
 }
 
 export default async function searchBooks({
@@ -53,13 +53,13 @@ export default async function searchBooks({
       title: el.query('td:first-of-type a')?.attr('title'),
       author: el.query('.authorName__container').text(),
       rating: ratingStr[0].toFloat(),
-      ratingCount: ratingStr[1].toInt(),
+      ratingCount: ratingStr[1]?.toInt(),
       cover: cover(el.query('td:first-of-type img').attr('src')),
       publicationYear: el
         .query('.greyText.smallText.uitext')
         .textContent()
         .between('published', '—')
-        .toInt(),
+        ?.toInt(),
       url: 'https://goodreads.com/' + el.query('.bookTitle').attr('href'),
       id: el
         .query('.bookTitle')
@@ -70,8 +70,8 @@ export default async function searchBooks({
   })
 
   return {
-    page: pageInfo.toInt(),
-    totalRecords: totalInfo.split('results')[0].toInt(),
+    page: pageInfo?.toInt(),
+    totalRecords: totalInfo.split('results')[0]?.toInt(),
     books,
   }
 }
