@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/shakogegia/goodreads-parser/compare/1.1.10...1.2.0) (2022-05-17)
+
+
+### Features
+
+* get book ([c850c61](https://github.com/shakogegia/goodreads-parser/commit/c850c61ca2e8053cd456f279ebd5552d3e3ac22e))
+* search books ([e1885b6](https://github.com/shakogegia/goodreads-parser/commit/e1885b666535666f06e0560455ab10c1878a26c3))
+
 ## [1.1.10](https://github.com/shakogegia/goodreads-parser/compare/1.1.9...1.1.10) (2022-05-05)
 
 
