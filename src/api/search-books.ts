@@ -30,7 +30,11 @@ export default async function searchBooks({
   page,
   field,
 }: SearchBooksProps): Promise<SearchBooksResult> {
-  const document = await fetch(`/search`, { q, page, field })
+  const document = await fetch(`https://goodreads.com/search`, {
+    q,
+    page,
+    field,
+  })
 
   const resultInfo = element(document).query('.searchSubNavContainer').text()
 

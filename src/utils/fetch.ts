@@ -8,7 +8,7 @@ export default async function fetch(
   params?: { [name: string]: string | number }
 ) {
   try {
-    const queryString = (obj) =>
+    const queryString = (obj = {}) =>
       '?'.concat(
         Object.keys(obj)
           .filter((key) => obj[key] !== undefined && obj[key] !== null)
@@ -19,11 +19,11 @@ export default async function fetch(
           .join('&')
       )
 
-    const fullUrl = `https://goodreads.com${url}${queryString(params)}`
-    console.log(fullUrl)
+    const fullUrl = `${url}${queryString(params)}`
     const response = await axios(fullUrl, { params })
     return new JSDOM(response.data).window.document
   } catch (error) {
-    throw new Error("Can't fetch data from Goodreads")
+    console.log(error.message || error)
+    throw new Error("Can't fetch data from Goodreads, url: " + url)
   }
 }
