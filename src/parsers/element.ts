@@ -5,13 +5,11 @@ export function element(el: Document | Element | null) {
     query: (selector: string) => element(el.querySelector(selector)),
     queryAll: (selector: string) => el.querySelectorAll(selector),
     attr: (attribute: string) => {
-      if (el.getAttribute) {
-        return escape(el.getAttribute(attribute))
+      if ((el as Element).getAttribute) {
+        return escape((el as Element).getAttribute(attribute))
       }
     },
     children: () => el.children,
-    innerHTML: () => el.innerHTML,
-    innerText: () => el.innerText,
     textContent: () => el.textContent,
     text: () => escape(el.textContent),
     textUnsafe: () => el.textContent,
