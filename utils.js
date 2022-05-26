@@ -133,4 +133,32 @@ const parseBookPage = (document) => {
   return result;
 };
 
-module.exports = { parseBookPage };
+const parseAuthorPage = (document) => {
+  const name = parseElementValue({
+    document,
+    query: "h1.authorName",
+    content: "textContent",
+  });
+
+  const photo = parseElementValue({
+    document,
+    query: ".authorLeftContainer > a > img",
+    content: "src",
+  });
+
+  const bio = parseElementValue({
+    document,
+    query: ".aboutAuthorInfo > span:last-of-type",
+    content: "textContent",
+  });
+
+  const result = {
+    name,
+    photo,
+    bio
+  };
+
+  return result;
+};
+
+module.exports = { parseBookPage, parseAuthorPage };

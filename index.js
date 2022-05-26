@@ -1,13 +1,13 @@
 const axios = require("axios");
 const jsdom = require("jsdom");
-const { parseBookPage } = require("./utils");
+const { parseBookPage, parseAuthorPage } = require("./utils");
 const { JSDOM } = jsdom;
 
 const getResult = (result, response) => {
   const url = response.request.res.responseUrl
   let id = ''
   
-  let urlParts = url.split('book/show/')
+  let urlParts = url.split('/show/')
   if (urlParts.length > 1) {
     urlParts = urlParts[1]
     if (urlParts.split('.').length > 1) {
@@ -44,6 +44,18 @@ module.exports.parseByURL = async url => {
     const dom = new JSDOM(response.data);
     const { document } = dom.window;
     const result = parseBookPage(document);
+    return getResult(result, response)
+  } catch (error) {
+    throw error;
+  }
+};
+
+module.exports.parseAuthorByURL = async url => {
+  try {
+    const response = await axios.get(url);
+    const dom = new JSDOM(response.data);
+    const { document } = dom.window;
+    const result = parseAuthorPage(document);
     return getResult(result, response)
   } catch (error) {
     throw error;
