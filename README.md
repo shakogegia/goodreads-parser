@@ -10,6 +10,8 @@ yarn add goodreads-parser
 
 ### Usage
 
+#### Parsing books
+
 First, import library
 
 ```js
@@ -55,6 +57,31 @@ Response:
 }
 ```
 
+#### Parsing author pages
+
+```js
+const GoodReadsParser = require("goodreads-parser");
+
+try {
+  const data = await GoodReadsParser.parseAuthorByUrl("https://www.goodreads.com/author/show/5780686.Liu_Cixin");
+  console.log("Author Data::", data);
+} catch (error) {
+  console.log("error", error);
+}
+```
+
+Response:
+
+```js
+Book Data:: {
+  name: 'Liu Cixin',
+  photo: 'https://images.gr-assets.com/authors/1454974329p5/5780686.jpg',
+  bio: 'Science Fiction fan and writer.Liu Cixin also appears as Cixin Liu',
+  id: '5780686',
+  url: 'https://www.goodreads.com/author/show/5780686.Liu_Cixin'
+}
+```
+
 ### API
 
 You can fetch book data by providing ISBN13 or just the url of the book in format like this: `https://www.goodreads.com/book/show/{ID}`
@@ -71,4 +98,11 @@ const result = await GoodReadsParser.parseByISBN13("123444");
 const result = await GoodReadsParser.parseByURL(
   "https://www.goodreads.com/book/show/36262331-the-three-body-problem"
 );
+```
+
+Author data can be fetched by providing the author URL form goodreads
+
+#### Author By Url
+```js
+const data = await GoodReadsParser.parseAuthorByUrl("https://www.goodreads.com/author/show/5780686.Liu_Cixin");
 ```
