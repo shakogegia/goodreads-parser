@@ -29,7 +29,7 @@
   "homepage": "https://github.com/shakogegia/goodreads-parser#readme",
   "dependencies": {
     "axios": "^0.27.2",
-    "jsdom": "^20.0.0"
+    "jsdom": "^20.0.1"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^5.1.0",
