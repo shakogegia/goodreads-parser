@@ -16,7 +16,7 @@ First, import library
 const GoodReadsParser = require("goodreads-parser");
 
 try {
-  const data = await GoodReadsParser.parseByISBN13("9781788543002");
+  const data = await GoodReadsParser.getBook({ isbn: '1524759783' });
   console.log("Book Data::", data);
 } catch (error) {
   console.log("error", error);
@@ -62,7 +62,7 @@ You can fetch book data by providing ISBN13 or just the url of the book in forma
 #### By ISBN13
 
 ```js
-const result = await GoodReadsParser.parseByISBN13("123444");
+const result = await GoodReadsParser.getBook({ isbn: '1524759783' });
 ```
 
 #### By URL
