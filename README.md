@@ -68,7 +68,5 @@ const result = await GoodReadsParser.getBook({ isbn: '1524759783' });
 #### By URL
 
 ```js
-const result = await GoodReadsParser.parseByURL(
-  "https://www.goodreads.com/book/show/36262331-the-three-body-problem"
-);
+const result = await GoodReadsParser.getBook({ url: "https://www.goodreads.com/book/show/36262331-the-three-body-problem" });
 ```
