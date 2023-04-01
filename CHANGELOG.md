@@ -1,3 +1,13 @@
+
+
+## [1.2.5](https://github.com/shakogegia/goodreads-parser/compare/1.2.4...1.2.5) (2023-04-01)
+
+
+### Bug Fixes
+
+* parse cover ([767b370](https://github.com/shakogegia/goodreads-parser/commit/767b3703c2a83bc6c1f543b780e16dcb329aad3e))
+* parse cover ([03f774c](https://github.com/shakogegia/goodreads-parser/commit/03f774ce9b4e3b40581ab0b0a51ceb58ae3610b5))
+
 ## [1.2.4](https://github.com/shakogegia/goodreads-parser/compare/1.2.3...1.2.4) (2022-05-17)
 
 
@@ -106,4 +116,3 @@
 ## [1.0.2](https://github.com/shakogegia/goodreads-parser/compare/1.0.1...1.0.2) (2021-05-09)
 
 ## 1.0.1 (2021-05-09)
-
