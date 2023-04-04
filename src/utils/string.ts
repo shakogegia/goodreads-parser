@@ -40,8 +40,8 @@ export function stringBetween(source: string, start: string, end: string) {
   return afterStartSplitByEnd[0].trim().replace(/\\n/g, '\n')
 }
 
-export function escape(value: string) {
-  return value.trim().replace(/\\n/g, '\n')
+export function escape(value?: string) {
+  return value?.trim().replace(/\\n/g, '\n')
 }
 
 String.prototype.between = function between(start: string, end: string) {

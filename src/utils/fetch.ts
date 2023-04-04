@@ -21,7 +21,10 @@ export default async function fetch(
 
     const fullUrl = `${url}${queryString(params)}`
     const response = await axios(fullUrl, { params })
-    return new JSDOM(response.data).window.document
+    return {
+      document: new JSDOM(response.data).window.document,
+      responseUrl: response.request.res.responseUrl as string | undefined,
+    }
   } catch (error) {
     console.log(error.message || error)
     throw new Error("Can't fetch data from Goodreads, url: " + url)

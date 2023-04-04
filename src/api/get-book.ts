@@ -39,12 +39,12 @@ export default async function getBook(params: Params): Promise<Book> {
     'https://www.goodreads.com/search?q=' +
       encodeURIComponent(params.isbn13 || params.isbn)
 
-  const document = await fetch(url)
+  const { document, responseUrl } = await fetch(url)
 
   const el = element(document)
 
   function dataBoxValue(query: string) {
-    const nodes = el.queryAll('.infoBoxRowTitle')
+    const nodes = el.queryAll('div')
     const tr = Array.from(nodes).find((node) =>
       node?.textContent?.toLowerCase().includes(query)
     )
@@ -75,21 +75,23 @@ export default async function getBook(params: Params): Promise<Book> {
   }
 
   const result = {
-    id: el.query('#book_id')?.attr('value'),
-    url: el.query('[hreflang="en"]')?.attr('href'),
-    title: el.query('#bookTitle')?.text(),
+    id: responseUrl?.split('show/')[1]?.split('-')[0],
+    url: el.query('[hreflang="en"]')?.attr('href') || responseUrl,
+    title: el.query('.Text__title1')?.text(),
     originalTitle: dataBoxValue('original title'),
     originalUrl: dataBoxValue('url'),
-    author: el.query('.authorName')?.text(),
-    description: el.query('#description>span:nth-of-type(2)')?.text(),
-    coverSmall: el.query('#coverImage')?.attr('src'),
-    coverLarge: cover(el.query('#coverImage')?.attr('src')),
+    author: el.query('[data-testid=name]')?.text(),
+    description: el
+      .query('.DetailsLayoutRightParagraph__widthConstrained')
+      ?.text(),
+    coverSmall: el.query('.BookCover__image>div>img')?.attr('src'),
+    coverLarge: cover(el.query('.BookCover__image>div>img')?.attr('src')),
     isbn: dataBoxValue('isbn')?.split('(')[0]?.escape(),
     isbn13: el.query('[itemprop="isbn"]')?.text(),
-    pages: el.query('[itemprop="numberOfPages"]')?.text().toInt(),
-    rating: el.query('[itemprop="ratingValue"]')?.text().toFloat(),
-    ratingCount: el.query('[itemprop="ratingCount"]')?.text().toFloat(),
-    reviewsCount: el.query('[itemprop="reviewCount"]')?.text().toFloat(),
+    pages: el.query('.pagesFormat')?.text().toInt(),
+    rating: el.query('.RatingStatistics__rating')?.text().toFloat(),
+    ratingCount: el.query('[data-testid=ratingsCount]')?.text().toFloat(),
+    reviewsCount: el.query('[data-testid=reviewsCount]')?.text().toFloat(),
     language: el.query('[itemprop="inLanguage"]')?.text(),
     genres: genres(),
     altCovers: Array.from(el.queryAll('.otherEdition img')).map((img) =>
@@ -97,5 +99,5 @@ export default async function getBook(params: Params): Promise<Book> {
     ),
   }
 
-  return result
+  return result as any
 }

@@ -31,7 +31,7 @@ export default async function searchBooks({
   page,
   field,
 }: SearchBooksProps): Promise<SearchBooksResult> {
-  const document = await fetch(`https://goodreads.com/search`, {
+  const { document } = await fetch(`https://goodreads.com/search`, {
     q,
     page,
     field,
