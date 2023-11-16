@@ -1,5 +1,12 @@
 
 
+## [1.2.7](https://github.com/shakogegia/goodreads-parser/compare/1.2.6...1.2.7) (2023-11-16)
+
+
+### Bug Fixes
+
+* parse element ([ffd747a](https://github.com/shakogegia/goodreads-parser/commit/ffd747a092dc4b9e404687805be92ade9719f0d9))
+
 ## [1.2.6](https://github.com/shakogegia/goodreads-parser/compare/1.2.5...1.2.6) (2023-04-04)
 
 
