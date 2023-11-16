@@ -11,8 +11,8 @@ export function element(el: Document | Element | null) {
       }
     },
     children: () => el.children,
-    textContent: () => el.textContent,
-    text: () => escape(el.textContent),
-    textUnsafe: () => el.textContent,
+    textContent: () => el?.textContent,
+    text: () => escape(el?.textContent),
+    textUnsafe: () => el?.textContent,
   }
 }
